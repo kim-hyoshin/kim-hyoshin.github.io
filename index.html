@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hyoshin Kim</title>
+  <meta name="description" content="Personal homepage of Hyoshin Kim, Ph.D. Candidate at KAIST College of Business." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: #2878bd;
+      --text: #333;
+      --muted: #666;
+      --border: #e0e0e0;
+      --bg: #fff;
+      --sidebar-width: 260px;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+    }
+
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrapper {
+      display: flex;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 24px;
+      gap: 48px;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      flex: 0 0 var(--sidebar-width);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .avatar {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 3px solid var(--border);
+      margin-bottom: 16px;
+      background: #e8f0f8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 56px;
+      color: var(--primary);
+      overflow: hidden;
+    }
+
+    .avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+    .sidebar h1 { font-size: 1.45rem; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+    .sidebar .position { font-size: 0.88rem; color: var(--muted); margin-bottom: 4px; }
+    .sidebar .affiliation { font-size: 0.88rem; color: var(--muted); margin-bottom: 14px; }
+    .sidebar .email { font-size: 0.85rem; color: var(--muted); margin-bottom: 18px; word-break: break-all; }
+
+    .sidebar-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .sidebar-links a {
+      font-size: 0.82rem;
+      padding: 4px 10px;
+      border: 1px solid var(--primary);
+      border-radius: 4px;
+      color: var(--primary);
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .sidebar-links a:hover { background: var(--primary); color: #fff; text-decoration: none; }
+
+    /* Main */
+    .main { flex: 1; min-width: 0; }
+
+    .main h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 28px 0 10px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .main p, .main li { font-size: 0.93rem; color: var(--text); margin-bottom: 6px; }
+    .main ul { list-style: disc; padding-left: 20px; }
+    .main ul li { margin-bottom: 5px; }
+
+    .pub-section-title { font-size: 0.9rem; font-weight: 600; color: var(--muted); margin: 18px 0 8px; }
+    .pub-item { margin-bottom: 16px; }
+    .pub-item .pub-title { font-size: 0.93rem; color: var(--text); }
+    .pub-item .pub-authors { font-size: 0.87rem; color: var(--muted); }
+    .pub-item .pub-venue { font-size: 0.87rem; margin-top: 2px; }
+    .pub-item .pub-venue strong { color: var(--text); }
+
+    .pub-links { margin-top: 4px; display: flex; gap: 6px; }
+    .pub-links a {
+      font-size: 0.78rem; padding: 2px 8px;
+      border: 1px solid #bbb; border-radius: 3px; color: var(--primary);
+    }
+    .pub-links a:hover { background: var(--primary); color: #fff; text-decoration: none; border-color: var(--primary); }
+
+    .proj-item { margin-bottom: 12px; font-size: 0.9rem; }
+    .proj-item .proj-meta { font-size: 0.87rem; color: var(--muted); }
+
+    .teach-item { margin-bottom: 8px; font-size: 0.9rem; }
+    .teach-item .role { font-weight: 600; }
+
+    footer {
+      text-align: center; padding: 24px; font-size: 0.78rem; color: #aaa;
+      border-top: 1px solid var(--border); max-width: 960px; margin: 0 auto;
+    }
+
+    @media (max-width: 680px) {
+      .wrapper { flex-direction: column; align-items: center; gap: 28px; }
+      .sidebar { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="avatar">🎓</div>
+    <!-- 프로필 사진 추가 시 위 줄을 아래로 교체:
+    <div class="avatar"><img src="assets/img/avatar.jpg" alt="Hyoshin Kim" /></div> -->
+
+    <h1>Hyoshin Kim</h1>
+    <div class="position">Ph.D. Candidate</div>
+    <div class="affiliation">School of Business and Technology Management<br/>KAIST</div>
+    <div class="email">hyoshin.kim (at) kaist.ac.kr</div>
+
+    <div class="sidebar-links">
+      <a href="assets/files/CV_Hyoshin_Kim.pdf" target="_blank">CV</a>
+      <a href="https://scholar.google.com/citations?user=Woeov6cAAAAJ" target="_blank">Google Scholar</a>
+      <a href="https://github.com/gented" target="_blank">GitHub</a>
+    </div>
+  </aside>
+
+  <!-- Main content -->
+  <main class="main">
+
+    <!-- Welcome -->
+    <p><strong>Welcome to my homepage!</strong></p>
+    <p style="margin-top:8px;">
+      My research focuses on <strong>economics of ideas, science and innovation, and artificial intelligence (AI)</strong>
+      with especially special interest in social and policy implications of AI.
+    </p>
+
+    <!-- Research Interests -->
+    <h2>Research Interests</h2>
+    <p>Economics of Ideas &nbsp;|&nbsp; Science and Innovation &nbsp;|&nbsp; Machine learning applications &nbsp;|&nbsp; Artificial Intelligence (AI)</p>
+
+    <!-- Publications -->
+    <h2>Publications</h2>
+
+    <div class="pub-item">
+      <div class="pub-title">
+        How Information about Generative AI Shapes Workers' Expectations: Evidence from a Survey Experiment
+      </div>
+      <div class="pub-authors"><strong>Hyoshin Kim</strong> and Jihee Kim</div>
+      <div class="pub-venue">Work-in-progress.</div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">
+        <a href="https://doi.org/10.1038/s44458-026-00054-6" target="_blank">
+          Sub-meter spatiotemporal mapping of slums using minimally supervised learning
+        </a>
+      </div>
+      <div class="pub-authors">
+        Jeasurk Yang, Sungwon Park, <strong>Hyoshin Kim</strong>, Sumin Lee, Jungwon Kim, Jihee Kim, and Meeyoung Cha
+      </div>
+      <div class="pub-venue"><strong>Communications Sustainability</strong>, Accepted.</div>
+      <div class="pub-links">
+        <a href="https://doi.org/10.1038/s44458-026-00054-6" target="_blank">DOI</a>
+      </div>
+    </div>
+
+    
+
+    
+
+    <div class="pub-item">
+      <div class="pub-title">
+        <a href="https://doi.org/10.1145/3748699.3749786" target="_blank">
+          Tracking Economic Disparities in North Korea: Satellite Imagery Analysis Using AI with Policy Insights
+        </a>
+      </div>
+      <div class="pub-authors">
+        Sumin Lee, <strong>Hyoshin Kim</strong>, Donghyun Ahn, Donggyu Lee, Jungwon Kim, Hyeok Yun, Chaemin Jang, WoonChul Jung, Dongman Lee, Meeyoung Cha, Jihee Kim
+      </div>
+      <div class="pub-venue"><strong>ACM GoodIT 2025</strong>, Accepted.</div>
+      <div class="pub-links">
+        <a href="https://doi.org/10.1145/3748699.3749786" target="_blank">DOI</a>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">
+        GeoReg: Weight-Constrained Few-Shot Regression for Socio-Economic Estimation using LLM
+      </div>
+      <div class="pub-authors">
+        Kyeongjin Ahn, Sungwon Han, Seungeon Lee, Donghyun Ahn, <strong>Hyoshin Kim</strong>, Jungwon Kim, Jihee Kim, Sangyoon Park, Meeyoung Cha
+      </div>
+      <div class="pub-venue">Under review, <em>International Journal of Applied Earth Observation and Geoinformation</em>.</div>
+    </div>
+
+    <!-- Teaching -->
+    <h2>Teaching</h2>
+
+    <div class="teach-item">
+      <span class="role">Lecturer</span> — Business Mathematics (Spring 2026, Undergraduate)<br/>
+      <span style="color:#666;font-size:0.87rem;">&#8226; Taught in English at KMU International Business School (KIBS)</span>
+    </div>
+
+    <div class="teach-item" style="margin-top:12px;">
+      <span class="role">Teaching Assistant</span> — KAIST
+      <ul style="margin-top:6px;">
+        <li>BTM408 Economics of Technology and Innovation (Spring 2023, 2025)</li>
+        <li>BTM701 Advanced Econometrics (Fall 2023, 2024)</li>
+        <li>BTM312 Intermediate Macroeconomics (Spring 2024)</li>
+        <li>MSB200 Introduction to Business Management (Fall 2022)</li>
+        <li>MSB408 Economics of Technology (Fall 2021)</li>
+        <li>ECN312 Intermediate Macroeconomics (Spring 2021)</li>
+      </ul>
+    </div>
+
+    <div class="teach-item" style="margin-top:12px;">
+      <span class="role">Teaching Assistant</span> — University of Bath, England
+      <ul style="margin-top:6px;">
+        <li>ES10004 Economic Data Analysis (Spring 2017)</li>
+        <li>ES10091 Introduction to Probability and Statistics (Fall 2016)</li>
+      </ul>
+    </div>
+
+    <!-- Education -->
+    <h2>Education</h2>
+    <ul>
+      <li>
+        Ph.D. in Business and Technology Management, KAIST, Mar 2021–Present<br/>
+        <span style="font-size:0.87rem;color:#666;">Economic Progress and AI Research Group (Econ-AI) · Advisor: Prof. Jihee Kim</span>
+      </li>
+      <li>
+        M.S. in Economics and Finance (with Merit), Durham University, 2013
+      </li>
+      <li>
+        B.A. in Economics (Minor in Mathematics), The University of Texas at Austin, 2009
+      </li>
+    </ul>
+
+  </main>
+</div>
+
+<footer>
+  &copy; 2025 Hyoshin Kim &middot; KAIST &middot; Last updated: April 2026
+</footer>
+
+</body>
+</html>
