@@ -5,27 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hyoshin Kim</title>
   <meta name="description" content="Personal homepage of Hyoshin Kim, Ph.D. Candidate at KAIST College of Business." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --primary: #2878bd;
       --text: #24292e;
-      --muted: #666;
+      --muted: #586069;
       --border: #eaecef;
       --bg: #fff;
-      --sidebar-width: 210px;
+      --sidebar-width: 200px;
     }
 
     body {
-      font-family: 'Lato', sans-serif;
-      font-size: 14.5px;
+      font-family: "Georgia", "Times New Roman", serif;
+      font-size: 16px;
       color: var(--text);
       background: var(--bg);
-      line-height: 1.65;
+      line-height: 1.7;
     }
 
     a { color: var(--primary); text-decoration: none; }
@@ -33,10 +31,10 @@
 
     .wrapper {
       display: flex;
-      max-width: 900px;
+      max-width: 920px;
       margin: 0 auto;
-      padding: 48px 24px 60px;
-      gap: 52px;
+      padding: 50px 30px 60px;
+      gap: 60px;
     }
 
     /* Sidebar */
@@ -49,26 +47,50 @@
     }
 
     .avatar {
-      width: 130px;
-      height: 130px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
-      border: 2px solid var(--border);
+      border: 1px solid var(--border);
       margin-bottom: 14px;
       background: #e8f0f8;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 46px;
+      font-size: 42px;
       color: var(--primary);
       overflow: hidden;
     }
 
     .avatar img { width: 100%; height: 100%; object-fit: cover; }
 
-    .sidebar h1 { font-size: 1.25rem; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
-    .sidebar .position { font-size: 0.82rem; color: var(--muted); margin-bottom: 3px; }
-    .sidebar .affiliation { font-size: 0.82rem; color: var(--muted); margin-bottom: 12px; }
-    .sidebar .email { font-family: monospace; font-size: 0.78rem; color: var(--muted); margin-bottom: 14px; word-break: break-all; }
+    .sidebar h1 {
+      font-family: "Georgia", serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .sidebar .position {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 2px;
+    }
+
+    .sidebar .affiliation {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .sidebar .email {
+      font-family: monospace;
+      font-size: 0.77rem;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
 
     .sidebar-links {
       display: flex;
@@ -79,7 +101,8 @@
     }
 
     .sidebar-links a {
-      font-size: 0.76rem;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.75rem;
       padding: 3px 9px;
       border: 1px solid var(--primary);
       border-radius: 3px;
@@ -93,38 +116,53 @@
     .main { flex: 1; min-width: 0; }
 
     .main h2 {
+      font-family: "Georgia", serif;
       font-size: 1rem;
       font-weight: 700;
       color: var(--text);
-      margin: 24px 0 8px;
-      padding-bottom: 4px;
+      margin: 22px 0 8px;
+      padding-bottom: 3px;
       border-bottom: 1px solid var(--border);
     }
 
-    .main p, .main li { font-size: 0.88rem; color: var(--text); margin-bottom: 5px; }
-    .main ul { list-style: disc; padding-left: 18px; }
-    .main ul li { margin-bottom: 4px; }
+    .main p { font-size: 0.9rem; color: var(--text); margin-bottom: 6px; }
+    .main ul { list-style: disc; padding-left: 20px; }
+    .main ul li { font-size: 0.9rem; color: var(--text); margin-bottom: 4px; }
 
     .pub-item { margin-bottom: 14px; }
-    .pub-item .pub-title { font-size: 0.88rem; color: var(--text); }
-    .pub-item .pub-authors { font-size: 0.83rem; color: var(--muted); }
+    .pub-item .pub-title { font-size: 0.9rem; color: var(--text); }
+    .pub-item .pub-authors { font-size: 0.85rem; color: var(--muted); margin-top: 1px; }
     .pub-item .pub-authors strong { color: #000; }
-    .pub-item .pub-venue { font-size: 0.83rem; margin-top: 2px; }
+    .pub-item .pub-venue { font-size: 0.85rem; margin-top: 1px; }
     .pub-item .pub-venue strong { color: var(--text); }
 
     .pub-links { margin-top: 4px; display: flex; gap: 5px; }
     .pub-links a {
-      font-size: 0.74rem; padding: 1px 7px;
-      border: 1px solid #bbb; border-radius: 3px; color: var(--primary);
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.72rem;
+      padding: 1px 7px;
+      border: 1px solid #bbb;
+      border-radius: 3px;
+      color: var(--primary);
     }
     .pub-links a:hover { background: var(--primary); color: #fff; text-decoration: none; border-color: var(--primary); }
 
-    .teach-item { margin-bottom: 6px; font-size: 0.88rem; }
-    .teach-item .role { font-weight: 700; }
+    .teach-item { margin-bottom: 6px; font-size: 0.9rem; }
+    .teach-item .role {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
 
     footer {
-      text-align: center; padding: 20px; font-size: 0.74rem; color: #aaa;
-      border-top: 1px solid var(--border); max-width: 900px; margin: 0 auto;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.72rem;
+      color: #aaa;
+      border-top: 1px solid var(--border);
+      max-width: 920px;
+      margin: 0 auto;
     }
 
     @media (max-width: 660px) {
@@ -149,7 +187,7 @@
     <div class="email">hyoshin.kim (at) kaist.ac.kr</div>
 
     <div class="sidebar-links">
-      <a href="mailto:hyoshin.kim@kaist.ac.kr?subject=CV Request&body=Dear Hyoshin Kim,%0A%0AI would like to request your CV.%0A%0ABest regards," target="_blank">CV</a>
+      <a href="/cdn-cgi/l/email-protection#3058495f4358595e1e5b595d705b515943441e51531e5b420f4345525a5553440d7366106255414555434416525f54490d745551421078495f4358595e107b595d1c1500711500717910475f455c54105c595b5510445f104255414555434410495f45421073661e1500711500717255434410425557514254431c" target="_blank">CV</a>
       <a href="https://scholar.google.com/citations?user=Woeov6cAAAAJ" target="_blank">Google Scholar</a>
     </div>
   </aside>
@@ -274,15 +312,4 @@
       </li>
       <li>
         B.A. in Economics (Minor in Mathematics), The University of Texas at Austin, 2009
-      </li>
-    </ul>
-
-  </main>
-</div>
-
-<footer>
-  &copy; 2025 Hyoshin Kim &middot; KAIST &middot; Last updated: April 2026
-</footer>
-
-</body>
-</html>
+      <
