@@ -221,10 +221,35 @@
       margin: 0 auto;
     }
 
-    @media (max-width: 640px) {
-      .wrapper { flex-direction: column; align-items: center; gap: 24px; }
-      .sidebar { width: 100%; }
-    }
+   @media (max-width: 640px) {
+
+  .wrapper {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+    padding: 40px 18px 60px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .sidebar {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .main {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .main p,
+  .main li,
+  .main a {
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+}
   </style>
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
