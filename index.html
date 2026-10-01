@@ -1,19 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hyoshin Kim</title>
-  <meta name="description" content="Personal homepage of Hyoshin Kim, Ph.D. Candidate at KAIST." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Fonts used by the reference design -->
+  <title>Hyoshin Kim</title>
+
+  <meta
+    name="description"
+    content="Personal homepage of Hyoshin Kim, Ph.D. Candidate at KAIST."
+  >
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&amp;display=swap"
+    rel="stylesheet"
+  >
 
   <!-- Calendly -->
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+  <link
+    href="https://assets.calendly.com/assets/external/widget.css"
+    rel="stylesheet"
+  >
+  <script
+    src="https://assets.calendly.com/assets/external/widget.js"
+    async
+  ></script>
+
+  <!-- Apply saved theme before rendering -->
+  <script>
+    (function () {
+      let savedTheme = null;
+
+      try {
+        savedTheme = localStorage.getItem("theme");
+      } catch (error) {
+        // Use the system preference when storage is unavailable.
+      }
+
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+      const theme =
+        savedTheme === "dark" || savedTheme === "light"
+          ? savedTheme
+          : prefersDark
+            ? "dark"
+            : "light";
+
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
 
   <style>
     :root {
@@ -30,7 +70,7 @@
       --navy-bg: #E9E9E9;
       --gold: #555555;
       --gold-bg: #ECECEC;
-      --link-rule: rgba(0, 0, 0, .28);
+      --link-rule: rgba(0, 0, 0, 0.28);
 
       --serif: "Source Serif 4", Georgia, serif;
       --sans: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
@@ -46,32 +86,46 @@
       --muted: #ACACAC;
       --faint: #767676;
       --rule: #2E2E2E;
+
       --navy: #F0F0F0;
       --navy-mid: #C9C9C9;
       --navy-soft: #909090;
       --navy-bg: #272727;
       --gold: #BDBDBD;
       --gold-bg: #2B2B2B;
-      --link-rule: rgba(201, 201, 201, .35);
+      --link-rule: rgba(201, 201, 201, 0.35);
 
       color-scheme: dark;
     }
 
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
     }
 
-    body, h1, h2, h3, p, ul, ol, li, figure {
+    body,
+    h1,
+    h2,
+    h3,
+    p,
+    ul,
+    ol,
+    li,
+    figure {
       margin: 0;
       padding: 0;
     }
 
-    ul, ol {
+    ul,
+    ol {
       list-style: none;
     }
 
     html {
       -webkit-text-size-adjust: 100%;
+      scroll-behavior: smooth;
+      scroll-padding-top: 24px;
     }
 
     body {
@@ -96,9 +150,11 @@
       border-bottom-color: var(--navy-mid);
     }
 
-    a:focus-visible {
+    a:focus-visible,
+    button:focus-visible,
+    summary:focus-visible {
       outline: 2px solid var(--navy-mid);
-      outline-offset: 2px;
+      outline-offset: 3px;
       border-radius: 2px;
     }
 
@@ -107,26 +163,25 @@
       margin: 0 auto;
       padding: 52px 32px 56px;
       display: grid;
-      grid-template-columns: 236px 1fr;
+      grid-template-columns: 236px minmax(0, 1fr);
       gap: 48px;
       align-items: start;
     }
 
-    /* ─────────────────────
-       Left rail
-       ───────────────────── */
+    /* Left sidebar */
 
     .rail {
       border-right: 1px solid var(--rule);
       padding-right: 44px;
       min-height: 268px;
+      min-width: 0;
     }
 
     .name {
       font-family: var(--serif);
       font-size: 31px;
       font-weight: 600;
-      letter-spacing: -.014em;
+      letter-spacing: -0.014em;
       line-height: 1.1;
       color: var(--navy);
     }
@@ -161,12 +216,11 @@
 
     .contact {
       margin-top: 22px;
-      padding-top: 18px;
-      border-top: 1px solid var(--rule);
       font-family: var(--mono);
-      font-size: 12.5px;
+      font-size: 14px;
       line-height: 1.95;
       color: var(--muted);
+      overflow-wrap: anywhere;
     }
 
     .contact a {
@@ -174,9 +228,35 @@
       border-bottom-color: var(--link-rule);
     }
 
-    /* ─────────────────────
-       Main content
-       ───────────────────── */
+    /* Sidebar navigation */
+
+    .side-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 30px;
+      padding-top: 26px;
+      border-top: 1px solid var(--rule);
+      font-family: var(--sans);
+    }
+
+    .side-nav a {
+      display: block;
+      width: fit-content;
+      border-bottom: none;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .side-nav a:hover {
+      color: var(--ink);
+      background: none;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    /* Main content */
 
     .main {
       min-width: 0;
@@ -200,7 +280,7 @@
       font-family: var(--sans);
       font-size: 11px;
       font-weight: 600;
-      letter-spacing: .15em;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
       color: var(--navy);
       padding-bottom: 7px;
@@ -208,9 +288,7 @@
       margin-bottom: 18px;
     }
 
-    /* ─────────────────────
-       Papers
-       ───────────────────── */
+    /* Papers */
 
     .paper + .paper {
       margin-top: 20px;
@@ -221,7 +299,7 @@
       font-size: 18px;
       font-weight: 600;
       line-height: 1.38;
-      letter-spacing: -.006em;
+      letter-spacing: -0.006em;
       text-wrap: pretty;
     }
 
@@ -257,19 +335,27 @@
     }
 
     .status {
+      display: inline-block;
+      max-width: 100%;
       font-family: var(--mono);
       font-size: 11px;
+      font-weight: 400;
+      font-style: normal;
       line-height: 1.45;
-      letter-spacing: .02em;
+      letter-spacing: 0.02em;
       color: var(--navy-mid);
       background: var(--navy-bg);
       padding: 3px 8px;
       border-radius: 2px;
+      overflow-wrap: anywhere;
     }
 
-    /* ─────────────────────
-       Presentations
-       ───────────────────── */
+    /* Presentations */
+
+    .talks {
+      min-width: 0;
+      max-width: 100%;
+    }
 
     .talks summary {
       font-family: var(--sans);
@@ -318,7 +404,7 @@
       font-family: var(--sans);
       font-size: 10.5px;
       font-weight: 600;
-      letter-spacing: .08em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--navy-mid);
       background: var(--navy-bg);
@@ -333,9 +419,7 @@
       font-weight: 500;
     }
 
-    /* ─────────────────────
-       Teaching
-       ───────────────────── */
+    /* Teaching */
 
     .course {
       font-family: var(--serif);
@@ -358,9 +442,7 @@
       margin-top: 1px;
     }
 
-    /* ─────────────────────
-       Education
-       ───────────────────── */
+    /* Education */
 
     .education {
       font-family: var(--serif);
@@ -377,21 +459,19 @@
       color: var(--ink);
     }
 
-    .education-meta,
     .education-detail {
       font-size: 15px;
       color: var(--muted);
       margin-top: 2px;
     }
 
-    /* ─────────────────────
-       Theme toggle
-       ───────────────────── */
+    /* Theme toggle */
 
     .theme-toggle {
       position: fixed;
       top: 18px;
       right: 18px;
+      z-index: 10;
       width: 36px;
       height: 36px;
       display: inline-flex;
@@ -404,9 +484,9 @@
       cursor: pointer;
       padding: 0;
       transition:
-        color .15s,
-        border-color .15s,
-        background .15s;
+        color 0.15s,
+        border-color 0.15s,
+        background 0.15s;
     }
 
     .theme-toggle:hover {
@@ -445,9 +525,7 @@
       color: var(--faint);
     }
 
-    /* ─────────────────────
-       Mobile
-       ───────────────────── */
+    /* Mobile */
 
     @media (max-width: 820px) {
       .page {
@@ -478,7 +556,6 @@
       .course,
       .course-meta,
       .education,
-      .education-meta,
       .education-detail,
       .intro,
       a {
@@ -495,9 +572,17 @@
       }
     }
 
-    /* ─────────────────────
-       Print
-       ───────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .theme-toggle {
+        transition: none;
+      }
+    }
+
+    /* Print */
 
     @media print {
       :root,
@@ -514,7 +599,7 @@
         --navy-bg: #eeeeee;
         --gold: #444444;
         --gold-bg: #eeeeee;
-        --link-rule: rgba(0, 0, 0, .25);
+        --link-rule: rgba(0, 0, 0, 0.25);
 
         color-scheme: light;
       }
@@ -528,7 +613,8 @@
         padding: 0;
       }
 
-      .theme-toggle {
+      .theme-toggle,
+      .side-nav {
         display: none;
       }
 
@@ -563,8 +649,8 @@
       aria-hidden="true"
     >
       <path
-        d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.7 6.7 0 0 0 21 12.8Z">
-      </path>
+        d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.7 6.7 0 0 0 21 12.8Z"
+      ></path>
     </svg>
 
     <svg
@@ -572,89 +658,71 @@
       viewBox="0 0 24 24"
       aria-hidden="true"
     >
-      <circle
-        cx="12"
-        cy="12"
-        r="4">
-      </circle>
-
+      <circle cx="12" cy="12" r="4"></circle>
       <path
-        d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41">
-      </path>
+        d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+      ></path>
     </svg>
   </button>
 
-
   <div class="page">
 
-    <!-- ─────────────────────
-         Left rail
-         ───────────────────── -->
-
+    <!-- Left sidebar -->
     <aside class="rail">
-
-      <h1 class="name">
-        Hyoshin Kim
-      </h1>
+      <h1 class="name">Hyoshin Kim</h1>
 
       <div class="affil">
-        Ph.D. Candidate in Business and Technology Management<br />
-        KAIST
+        Ph.D. Candidate<br>
+        School of Business and Technology Management<br>
+        College of Business, KAIST
       </div>
 
       <div class="contact">
-
         <div>
-          hyoshin.kim (at) kaist.ac.kr
+          <a href="mailto:hyoshin.kim@kaist.ac.kr">
+            hyoshin.kim@kaist.ac.kr
+          </a>
         </div>
 
         <div>
           <a
-            href="#"
-            onclick="Calendly.initPopupWidget({url:'https://calendly.com/kimhyoshin/30min'});return false;"
+            href="https://calendly.com/kimhyoshin/30min"
+            onclick="if (window.Calendly) {
+              Calendly.initPopupWidget({
+                url: 'https://calendly.com/kimhyoshin/30min'
+              });
+              return false;
+            }"
           >
             Schedule a meeting
           </a>
         </div>
-
       </div>
 
+      <nav class="side-nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#publications">Publications</a>
+        <a href="#working-papers">Working Papers</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#education">Education</a>
+      </nav>
     </aside>
 
-
-    <!-- ─────────────────────
-         Main content
-         ───────────────────── -->
-
-    <main class="main">
-
+    <!-- Main content -->
+    <main class="main" id="about">
       <p class="intro">
-        I am a Ph.D. candidate in Business and Technology Management at KAIST.
-        My research focuses on economics of ideas, science and innovation,
-        and artificial intelligence (AI), with special interest in the
-        social and policy implications of AI.
+        I am a Ph.D. candidate in Business and Technology Management
+        at KAIST. My research focuses on economics of ideas,
+        science and innovation, and artificial intelligence (AI),
+        with special interest in the social and policy implications of AI.
       </p>
 
+      <!-- Publications -->
+      <section class="section" id="publications">
+        <h2 class="section-title">Publications</h2>
 
-      <!-- ─────────────────────
-           Publications
-           ───────────────────── -->
-
-      <section
-        class="section"
-        id="publications"
-      >
-
-        <h2 class="section-title">
-          Publications
-        </h2>
-
-
-        <!-- Publication 1 -->
         <article class="paper">
-
           <h3 class="paper-title">
-
             <a
               href="https://doi.org/10.1038/s44458-026-00054-6"
               target="_blank"
@@ -663,7 +731,6 @@
               Minimally supervised learning on sub-meter satellite imagery
               reveals slum expansion during the COVID-19 pandemic
             </a>
-
           </h3>
 
           <p class="authors">
@@ -675,15 +742,10 @@
             <em>Communications Sustainability</em>
             1, Article 52, 2026.
           </p>
-
         </article>
 
-
-        <!-- Publication 2 -->
         <article class="paper">
-
           <h3 class="paper-title">
-
             <a
               href="https://doi.org/10.1145/3748699.3749786"
               target="_blank"
@@ -692,7 +754,6 @@
               Tracking Economic Disparities in North Korea:
               Satellite Imagery Analysis Using AI with Policy Insights
             </a>
-
           </h3>
 
           <p class="authors">
@@ -703,57 +764,30 @@
           </p>
 
           <p class="publication-meta">
-            <em>ACM GoodIT '25</em>,
-            pp. 155–163, 2025.
+            <em>ACM GoodIT '25</em>, pp. 155–163, 2025.
           </p>
-
         </article>
-
       </section>
 
+      <!-- Working Papers -->
+      <section class="section" id="working-papers">
+        <h2 class="section-title">Working Papers</h2>
 
-      <!-- ─────────────────────
-           Working Papers
-           ───────────────────── -->
-
-      <section
-        class="section"
-        id="working-papers"
-      >
-
-        <h2 class="section-title">
-          Working Papers
-        </h2>
-
-
-        <!-- Working Paper 1 -->
         <article class="paper">
-
           <h3 class="paper-title">
             How Information about Generative AI Shapes Workers'
             Expectations: Evidence from a Survey Experiment
           </h3>
 
-          <p class="authors">
-            with Jihee Kim
-          </p>
+          <p class="authors">with Jihee Kim</p>
 
           <div class="meta">
-
             <details class="talks">
-
-              <summary>
-                Presentations
-              </summary>
+              <summary>Presentations</summary>
 
               <ul class="talks-body">
-
                 <li>
-
-                  <span class="upcoming">
-                    Upcoming
-                  </span>
-
+                  <span class="upcoming">Upcoming</span>
                   <a
                     href="https://www.aeaweb.org/conference/2027/preliminary"
                     target="_blank"
@@ -764,9 +798,7 @@
                     Annual Meeting
                   </a>,
                   Washington, DC, January 2027
-
                 </li>
-
 
                 <li>
                   2026 Korean Economic Review (KER)
@@ -774,36 +806,25 @@
                   Jeju, South Korea, June 2026
                 </li>
 
-
                 <li>
                   2026 Spring BTM Workshop,
                   KAIST, February 2026
-
                   <span class="award">
                     — Outstanding Presentation Award
                   </span>
                 </li>
 
-
                 <li>
                   2025 BTM &amp; ITM &amp; GDI BK Research Workshop,
                   KAIST, February 2025
                 </li>
-
               </ul>
-
             </details>
-
           </div>
-
         </article>
 
-
-        <!-- Working Paper 2 -->
         <article class="paper">
-
           <h3 class="paper-title">
-
             <a
               href="https://arxiv.org/abs/2507.13323"
               target="_blank"
@@ -812,7 +833,6 @@
               GeoReg: Weight-Constrained Few-Shot Regression
               for Socio-Economic Estimation using LLM
             </a>
-
           </h3>
 
           <p class="authors">
@@ -822,20 +842,14 @@
           </p>
 
           <div class="meta">
-
             <span class="status">
               Under Review, International Journal of Applied Earth
               Observation and Geoinformation
             </span>
-
           </div>
-
         </article>
 
-
-        <!-- Working Paper 3 -->
         <article class="paper">
-
           <h3 class="paper-title">
             Monitoring Urban Slums from the Sky:
             How Redevelopment Projects Shape the Spatial Pattern
@@ -847,21 +861,15 @@
           </p>
 
           <div class="meta">
-
             <details class="talks">
-
-              <summary>
-                Presentations
-              </summary>
+              <summary>Presentations</summary>
 
               <ul class="talks-body">
-
                 <li>
                   The 19th North American Meeting of the
                   Urban Economics Association (UEA),
                   Montreal, Canada, October 2025
                 </li>
-
 
                 <li>
                   2025 Summer School in Urban Economics,
@@ -869,166 +877,138 @@
                   Boston, MA, July 2025
                 </li>
 
-
                 <li>
                   BTM Brown Bag Seminar,
                   KAIST, November 2024
                 </li>
-
               </ul>
-
             </details>
-
           </div>
-
         </article>
-
       </section>
 
+      <!-- Teaching -->
+      <section class="section" id="teaching">
+        <h2 class="section-title">Teaching</h2>
 
-      <!-- ─────────────────────
-           Teaching
-           ───────────────────── -->
+        <div class="course">
+          <p class="course-name">
+            Financial Markets and Institutions
+          </p>
+          <p class="course-meta">
+            Kookmin University · Undergraduate · Lecturer ·
+            Fall 2026 · Taught in English
+          </p>
+        </div>
 
-     <!-- Teaching -->
-<section class="section" id="teaching">
-  <h2>Teaching</h2>
+        <div class="course">
+          <p class="course-name">Business Mathematics</p>
+          <p class="course-meta">
+            Kookmin University · Undergraduate · Lecturer ·
+            Spring 2026 · Taught in English
+          </p>
+        </div>
 
-  <div class="teaching-item">
-    <p class="item-title">
-      Financial Markets and Institutions
-    </p>
-    <p class="item-meta">
-      Kookmin University · Undergraduate · Lecturer ·
-      Fall 2026 · Taught in English
-    </p>
-  </div>
+        <div class="course">
+          <p class="course-name">
+            BTM408 Economics of Technology and Innovation
+          </p>
+          <p class="course-meta">
+            KAIST · Undergraduate · Teaching Assistant ·
+            Spring 2025, Spring 2023
+          </p>
+        </div>
 
-  <div class="teaching-item">
-    <p class="item-title">
-      Business Mathematics
-    </p>
-    <p class="item-meta">
-      Kookmin University · Undergraduate · Lecturer ·
-      Spring 2026 · Taught in English
-    </p>
-  </div>
+        <div class="course">
+          <p class="course-name">
+            BTM701 Advanced Econometrics
+          </p>
+          <p class="course-meta">
+            KAIST · Graduate · Teaching Assistant ·
+            Fall 2024, Fall 2023
+          </p>
+        </div>
 
-  <div class="teaching-item">
-    <p class="item-title">
-      BTM408 Economics of Technology and Innovation
-    </p>
-    <p class="item-meta">
-      KAIST · Undergraduate · Teaching Assistant ·
-      Spring 2025, Spring 2023
-    </p>
-  </div>
+        <div class="course">
+          <p class="course-name">
+            Intermediate Macroeconomics
+          </p>
+          <p class="course-meta">
+            KAIST · BTM312 · Undergraduate · Teaching Assistant ·
+            Spring 2024
+          </p>
+          <p class="course-meta">
+            KAIST · ECN312 · Graduate · Teaching Assistant ·
+            Spring 2021
+          </p>
+        </div>
 
-  <div class="teaching-item">
-    <p class="item-title">
-      BTM701 Advanced Econometrics
-    </p>
-    <p class="item-meta">
-      KAIST · Graduate · Teaching Assistant ·
-      Fall 2024, Fall 2023
-    </p>
-  </div>
+        <div class="course">
+          <p class="course-name">
+            MSB200 Introduction to Business Management
+          </p>
+          <p class="course-meta">
+            KAIST · Undergraduate · Teaching Assistant ·
+            Fall 2022
+          </p>
+        </div>
 
-  <div class="teaching-item">
-    <p class="item-title">
-      Intermediate Macroeconomics
-    </p>
-    <p class="item-meta">
-      KAIST · BTM312 · Undergraduate · Teaching Assistant ·
-      Spring 2024
-    </p>
-    <p class="item-meta">
-      KAIST · ECN312 · Graduate · Teaching Assistant ·
-      Spring 2021
-    </p>
-  </div>
+        <div class="course">
+          <p class="course-name">
+            MSB408 Economics of Technology
+          </p>
+          <p class="course-meta">
+            KAIST · Undergraduate · Teaching Assistant ·
+            Fall 2021
+          </p>
+        </div>
 
-  <div class="teaching-item">
-    <p class="item-title">
-      MSB200 Introduction to Business Management
-    </p>
-    <p class="item-meta">
-      KAIST · Undergraduate · Teaching Assistant ·
-      Fall 2022
-    </p>
-  </div>
+        <div class="course">
+          <p class="course-name">
+            MSB215 Microeconomics
+          </p>
+          <p class="course-meta">
+            KAIST · Undergraduate · Tutor · Spring 2021
+          </p>
+        </div>
 
-  <div class="teaching-item">
-    <p class="item-title">
-      MSB408 Economics of Technology
-    </p>
-    <p class="item-meta">
-      KAIST · Undergraduate · Teaching Assistant ·
-      Fall 2021
-    </p>
-  </div>
+        <div class="course">
+          <p class="course-name">
+            ES10004 Economic Data Analysis
+          </p>
+          <p class="course-meta">
+            University of Bath, England · Undergraduate ·
+            Teaching Assistant · Spring 2017
+          </p>
+        </div>
 
-  <div class="teaching-item">
-    <p class="item-title">
-      MSB215 Microeconomics
-    </p>
-    <p class="item-meta">
-      KAIST · Undergraduate · Tutor · Spring 2021
-    </p>
-  </div>
+        <div class="course">
+          <p class="course-name">
+            ES10091 Introduction to Probability and Statistics
+          </p>
+          <p class="course-meta">
+            University of Bath, England · Undergraduate ·
+            Teaching Assistant · Fall 2016
+          </p>
+        </div>
+      </section>
 
-  <div class="teaching-item">
-    <p class="item-title">
-      ES10004 Economic Data Analysis
-    </p>
-    <p class="item-meta">
-      Universtiy of Bath, England · Undergraduate · Teaching Assistant ·
-      Spring 2017
-    </p>
-  </div>
-
-  <div class="teaching-item">
-    <p class="item-title">
-      ES10091 Introduction to Probability and Statistics
-    </p>
-    <p class="item-meta">
-      University of Bath, England · Undergraduate · Teaching Assistant ·
-      Fall 2016
-    </p>
-  </div>
-</section>
-
-
-      <!-- ─────────────────────
-           Education
-           ───────────────────── -->
-
-      <section
-        class="section"
-        id="education"
-      >
-
-        <h2 class="section-title">
-          Education
-        </h2>
-
+      <!-- Education -->
+      <section class="section" id="education">
+        <h2 class="section-title">Education</h2>
 
         <div class="education">
-
           <div class="degree">
-            Ph.D. in Business and Technology Management, KAIST, Mar 2021–Present
+            Ph.D. in Business and Technology Management,
+            KAIST, Mar 2021–Present
           </div>
 
-      
           <div class="education-detail">
-
             Dissertation:
             <em>Social and Policy Implications of AI</em>
-
-            <br />
+            <br>
 
             Supervisor:
-
             <a
               href="https://jiheekim.net/"
               target="_blank"
@@ -1036,11 +1016,9 @@
             >
               Prof. Jihee Kim
             </a>
-
-            <br />
+            <br>
 
             Research Group:
-
             <a
               href="https://econai.kaist.ac.kr/index.html"
               target="_blank"
@@ -1048,114 +1026,66 @@
             >
               Economic Progress and AI Research Group (Econ-AI)
             </a>
-
           </div>
-
         </div>
 
-
         <div class="education">
-
           <div class="degree">
             MSc in Economics and Finance,
             Durham University, 2013
           </div>
-
-
         </div>
 
-
         <div class="education">
-
           <div class="degree">
             B.A. in Economics (Minor in Mathematics),
             The University of Texas at Austin, 2009
           </div>
-
-       
-
         </div>
-
       </section>
-
     </main>
-
   </div>
-
 
   <footer>
     &copy; 2026 Hyoshin Kim
-    &middot;
-    KAIST
-    &middot;
-    Last updated: October 2026
+    &middot; KAIST
+    &middot; Last updated: October 2026
   </footer>
-
 
   <script>
     (function () {
-
       const root = document.documentElement;
+      const button = document.querySelector(".theme-toggle");
 
-      const button =
-        document.querySelector(".theme-toggle");
+      function updateThemeButton() {
+        const isDark = root.getAttribute("data-theme") === "dark";
 
-      const savedTheme =
-        localStorage.getItem("theme");
-
-
-      if (
-        savedTheme === "dark" ||
-        savedTheme === "light"
-      ) {
-
-        root.setAttribute(
-          "data-theme",
-          savedTheme
+        button.setAttribute(
+          "aria-label",
+          isDark ? "Switch to light mode" : "Switch to dark mode"
         );
 
-      } else if (
-        window.matchMedia &&
-        window.matchMedia(
-          "(prefers-color-scheme: dark)"
-        ).matches
-      ) {
-
-        root.setAttribute(
-          "data-theme",
-          "dark"
+        button.setAttribute(
+          "title",
+          isDark ? "Switch to light mode" : "Switch to dark mode"
         );
-
       }
 
+      updateThemeButton();
 
-      button.addEventListener(
-        "click",
-        function () {
+      button.addEventListener("click", function () {
+        const current = root.getAttribute("data-theme");
+        const next = current === "dark" ? "light" : "dark";
 
-          const current =
-            root.getAttribute("data-theme") === "dark"
-              ? "dark"
-              : "light";
+        root.setAttribute("data-theme", next);
+        updateThemeButton();
 
-          const next =
-            current === "dark"
-              ? "light"
-              : "dark";
-
-          root.setAttribute(
-            "data-theme",
-            next
-          );
-
-          localStorage.setItem(
-            "theme",
-            next
-          );
-
+        try {
+          localStorage.setItem("theme", next);
+        } catch (error) {
+          // The selected theme still works for the current page.
         }
-      );
-
+      });
     })();
   </script>
 
