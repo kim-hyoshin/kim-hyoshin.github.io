@@ -6,8 +6,13 @@
   <title>Hyoshin Kim</title>
   <meta name="description" content="Personal homepage of Hyoshin Kim, Ph.D. Candidate at KAIST." />
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500&display=swap" rel="stylesheet" />
+
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     :root {
       --primary: #2878bd;
@@ -25,8 +30,14 @@
       line-height: 1.7;
     }
 
-    a { color: var(--primary); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
 
     /* ── Layout ── */
     .wrapper {
@@ -60,7 +71,11 @@
       overflow: hidden;
     }
 
-    .avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
     .sidebar h1 {
       font-family: "Crimson Pro", "Georgia", serif;
@@ -119,6 +134,7 @@
     .main ul li strong a {
       color: var(--text);
     }
+
     .main ul li strong a:hover {
       color: var(--primary);
     }
@@ -127,12 +143,16 @@
     .main ul li a {
       color: #043361;
     }
+
     .main ul li a:hover {
       color: var(--primary);
     }
 
     /* ── Main ── */
-    .main { flex: 1; min-width: 0; }
+    .main {
+      flex: 1;
+      min-width: 0;
+    }
 
     /* Section headers */
     .main h2 {
@@ -154,7 +174,12 @@
     }
 
     /* Body text — slightly grey */
-    .main p { font-size: 0.88rem; margin-bottom: 8px; line-height: 1.75; color: var(--muted); }
+    .main p {
+      font-size: 0.88rem;
+      margin-bottom: 8px;
+      line-height: 1.75;
+      color: var(--muted);
+    }
 
     /* Bullet lists */
     .main ul {
@@ -221,217 +246,462 @@
       margin: 0 auto;
     }
 
-   @media (max-width: 640px) {
+    @media (max-width: 640px) {
 
-  .wrapper {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 24px;
-    padding: 40px 18px 60px;
-    width: 100%;
-    max-width: 100%;
-  }
+      .wrapper {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 24px;
+        padding: 40px 18px 60px;
+        width: 100%;
+        max-width: 100%;
+      }
 
-  .sidebar {
-    width: 100%;
-    max-width: 100%;
-  }
+      .sidebar {
+        width: 100%;
+        max-width: 100%;
+      }
 
-  .main {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-  }
+      .main {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+      }
 
-  .main p,
-  .main li,
-  .main a {
-    overflow-wrap: anywhere;
-    word-break: normal;
-  }
-}
+      .main p,
+      .main li,
+      .main a {
+        overflow-wrap: anywhere;
+        word-break: normal;
+      }
+    }
   </style>
+
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
 </head>
+
 <body>
 
 <div class="wrapper">
 
   <!-- ── Sidebar ── -->
   <aside class="sidebar">
-    <div class="avatar"><img src="hyoshin.jpg" alt="Hyoshin Kim" /></div>
+
+    <div class="avatar">
+      <img src="hyoshin.jpg" alt="Hyoshin Kim" />
+    </div>
 
     <h1>Hyoshin Kim</h1>
-    <div class="position">Ph.D. Candidate</div>
-    <div class="affiliation">School of Business and Technology Management<br/>College of Business, KAIST</div>
-    <div class="email">hyoshin.kim (at) kaist.ac.kr</div>
+
+    <div class="position">
+      Ph.D. Candidate
+    </div>
+
+    <div class="affiliation">
+      School of Business and Technology Management<br/>
+      College of Business, KAIST
+    </div>
+
+    <div class="email">
+      hyoshin.kim (at) kaist.ac.kr
+    </div>
 
     <div class="sidebar-links">
-    <a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/kimhyoshin/30min'});return false;">Schedule a meeting</a>
-</div>
+      <a href="#"
+         onclick="Calendly.initPopupWidget({url:'https://calendly.com/kimhyoshin/30min'});return false;">
+        Schedule a meeting
+      </a>
+    </div>
+
   </aside>
+
 
   <!-- ── Main ── -->
   <main class="main">
 
     <!-- Welcome -->
     <h2 class="welcome-title">Welcome to my homepage!</h2>
-    <ul>
-      <li>My research focuses on economics of ideas, science and innovation, and artificial intelligence (AI) with special interest in social and policy implications of AI.</li>
-      <li>Research Interests: Economics of Ideas | Science and Innovation | Machine learning applications | Applied AI for Economic, Social, and Policy Research</li>
-    </ul>
 
-    <!-- Publications -->
-    <h2>Publications</h2>
     <ul>
       <li>
-        "How Information about Generative AI Shapes Workers' Expectations: Evidence from a Survey Experiment"
-        (with Jihee Kim).
-        Work-in-progress.
+        My research focuses on economics of ideas, science and innovation,
+        and artificial intelligence (AI) with special interest in social
+        and policy implications of AI.
       </li>
 
       <li>
-        "<a href="https://doi.org/10.1038/s44458-026-00054-6" target="_blank">Minimally supervised learning on sub-meter satellite imagery reveals slum expansion during the COVID-19 pandemic</a>"
-        (with Jeasurk Yang, Sungwon Park, Sumin Lee, Jungwon Kim, Jihee Kim, and Meeyoung Cha),
+        Research Interests: Economics of Ideas | Science and Innovation |
+        Machine learning applications | Applied AI for Economic, Social,
+        and Policy Research
+      </li>
+    </ul>
+
+
+    <!-- Publications -->
+    <h2>Publications</h2>
+
+    <ul>
+
+      <li>
+        "<a href="https://doi.org/10.1038/s44458-026-00054-6"
+            target="_blank">
+          Minimally supervised learning on sub-meter satellite imagery reveals
+          slum expansion during the COVID-19 pandemic
+        </a>"
+        (with Jeasurk Yang, Sungwon Park, Sumin Lee, Jungwon Kim, Jihee Kim,
+        and Meeyoung Cha),
         <em>Communications Sustainability</em> 1, Article 52, 2026.
       </li>
 
       <li>
-        "<a href="https://doi.org/10.1145/3748699.3749786" target="_blank">Tracking Economic Disparities in North Korea: Satellite Imagery Analysis Using AI with Policy Insights</a>"
-        (with Sumin Lee, Donghyun Ahn, Donggyu Lee, Jungwon Kim, Hyeok Yun, Chaemin Jang, WoonChul Jung, Dongman Lee, Meeyoung Cha, and Jihee Kim),
+        "<a href="https://doi.org/10.1145/3748699.3749786"
+            target="_blank">
+          Tracking Economic Disparities in North Korea: Satellite Imagery
+          Analysis Using AI with Policy Insights
+        </a>"
+        (with Sumin Lee, Donghyun Ahn, Donggyu Lee, Jungwon Kim, Hyeok Yun,
+        Chaemin Jang, WoonChul Jung, Dongman Lee, Meeyoung Cha, and Jihee Kim),
         <em>ACM GoodIT '25</em>, pp. 155–163, 2025.
       </li>
 
+    </ul>
+
+
+    <!-- Working Papers -->
+    <h2>Working Papers</h2>
+
+    <ul>
+
       <li>
-        "<a href="https://arxiv.org/abs/2507.13323" target="_blank">GeoReg: Weight-Constrained Few-Shot Regression for Socio-Economic Estimation using LLM</a>"
-        (with Kyeongjin Ahn, Sungwon Han, Seungeon Lee, Donghyun Ahn, Jungwon Kim, Jihee Kim, Sangyoon Park, and Meeyoung Cha),
-        Under Review, <em>International Journal of Applied Earth Observation and Geoinformation</em>.
+        "How Information about Generative AI Shapes Workers' Expectations:
+        Evidence from a Survey Experiment"
+        (with Jihee Kim).
+        <em>Working paper.</em>
+      </li>
+
+      <li>
+        "<a href="https://arxiv.org/abs/2507.13323"
+            target="_blank">
+          GeoReg: Weight-Constrained Few-Shot Regression for Socio-Economic
+          Estimation using LLM
+        </a>"
+        (with Kyeongjin Ahn, Sungwon Han, Seungeon Lee, Donghyun Ahn,
+        Jungwon Kim, Jihee Kim, Sangyoon Park, and Meeyoung Cha).
+        <em>
+          Under review at the International Journal of Applied Earth
+          Observation and Geoinformation.
+        </em>
+      </li>
+
+      <li>
+        "Monitoring Urban Slums from the Sky: How Redevelopment Projects
+        Shape the Spatial Pattern of Slum Settlements over Time"
+        (with Meeyoung Cha, Jihee Kim, and Jeasurk Yang).
+        <em>Working paper.</em>
       </li>
 
     </ul>
+
 
     <!-- Presentations -->
     <h2>Presentations</h2>
+
     <ul>
-       <li>
-       <span style="
-  color: #8952EE;
-  font-weight: bold;
-  font-size: 0.9em;
-  margin-right: 6px;
-">**UPCOMING**</span>
-        "How Information about Generative AI Shapes Workers' Expectations: Evidence from a Survey Experiment",
-        American Economic Association (AEA) Poster Session, <a href="https://www.aeaweb.org/conference/2027/preliminary"
-   target="_blank"
-   rel="noopener noreferrer">
-2027 Allied Social Science Associations (ASSA) Annual Meeting</a>, Washington, DC, January 2027.
-      </li>
-      
-      <li>
-        "How Information about Generative AI Shapes Workers' Expectations: Evidence from a Survey Experiment",
-        2026 Korean Economic Review (KER) International Conference, Jeju, South Korea, June 2026.
-      </li>
 
       <li>
-        "How Information about Generative AI Shapes Workers' Expectations: Evidence from a Survey Experiment",
-        2026 Spring BTM Workshop, KAIST, February 2026 — Outstanding Presentation Award.
+
+        <span style="
+          color: #8952EE;
+          font-weight: bold;
+          font-size: 0.9em;
+          margin-right: 6px;
+        ">**UPCOMING**</span>
+
+        "How Information about Generative AI Shapes Workers' Expectations:
+        Evidence from a Survey Experiment",
+
+        American Economic Association (AEA) Poster Session,
+
+        <a href="https://www.aeaweb.org/conference/2027/preliminary"
+           target="_blank"
+           rel="noopener noreferrer">
+          2027 Allied Social Science Associations (ASSA) Annual Meeting
+        </a>,
+
+        Washington, DC, January 2027.
+
       </li>
 
-      <li>
-        "Monitoring Urban Slums From the Sky: Spatial Patterns of Slum Change Across Four Cities",
-        The 19th North American Meeting of the Urban Economics Association (UEA), Montreal, Canada, October 2025.
-      </li>
-      
-      <li>
-        "Monitoring Urban Slums from the Sky: Spatial Patterns of Slum Change Across Four Cities",
-        2025 Summer School in Urban Economics, Urban Economics Association (UEA), Boston, MA, July 2025.
-      </li>
 
       <li>
-        "How Information about Generative AI Shapes Workers' Expectations: Evidence from a Survey Experiment",
-        2025 BTM & ITM & GDI BK Research Workshop, KAIST, February 2025.
+        "How Information about Generative AI Shapes Workers' Expectations:
+        Evidence from a Survey Experiment",
+        2026 Korean Economic Review (KER) International Conference,
+        Jeju, South Korea, June 2026.
       </li>
 
+
       <li>
-        "Monitoring Urban Slums from the Sky: Spatial Patterns of Slum Change Across Four Cities",
+        "How Information about Generative AI Shapes Workers' Expectations:
+        Evidence from a Survey Experiment",
+        2026 Spring BTM Workshop, KAIST, February 2026 —
+        Outstanding Presentation Award.
+      </li>
+
+
+      <li>
+        "Monitoring Urban Slums From the Sky:
+        Spatial Patterns of Slum Change Across Four Cities",
+        The 19th North American Meeting of the Urban Economics Association
+        (UEA), Montreal, Canada, October 2025.
+      </li>
+
+
+      <li>
+        "Monitoring Urban Slums from the Sky:
+        Spatial Patterns of Slum Change Across Four Cities",
+        2025 Summer School in Urban Economics,
+        Urban Economics Association (UEA),
+        Boston, MA, July 2025.
+      </li>
+
+
+      <li>
+        "How Information about Generative AI Shapes Workers' Expectations:
+        Evidence from a Survey Experiment",
+        2025 BTM & ITM & GDI BK Research Workshop,
+        KAIST, February 2025.
+      </li>
+
+
+      <li>
+        "Monitoring Urban Slums from the Sky:
+        Spatial Patterns of Slum Change Across Four Cities",
         BTM Brown Bag Seminar, KAIST, November 2024.
       </li>
+
     </ul>
+
 
     <!-- Teaching -->
     <h2>Teaching</h2>
 
     <ul>
-      <li><span class="teach-role">@Kookmin University (KMU International Business School (KIBS)), Lecturer</span>
+
+      <li>
+
+        <span class="teach-role">
+          @Kookmin University
+          (KMU International Business School (KIBS)), Lecturer
+        </span>
+
         <ul class="teach-list">
-          <li>Spring 2026 - Business Mathematics (Undergraduate, taught in English)</li>
-          <li>Fall 2026 - Financial Markets and Institutions (Undergraduate, taught in English)</li>
+
+          <li>
+            Spring 2026 - Business Mathematics
+            (Undergraduate, taught in English)
+          </li>
+
+          <li>
+            Fall 2026 - Financial Markets and Institutions
+            (Undergraduate, taught in English)
+          </li>
+
         </ul>
+
       </li>
 
-      <li style="margin-top:6px;"><span class="teach-role">@KAIST, Teaching Assistant</span>
+
+      <li style="margin-top:6px;">
+
+        <span class="teach-role">
+          @KAIST, Teaching Assistant
+        </span>
+
         <ul class="teach-list">
-          <li>Spring 2025 - BTM408 Economics of Technology and Innovation (Undergraduate)</li>
-          <li>Fall 2024 - BTM701 Advanced Econometrics (Graduate)</li>
-          <li>Spring 2024 - BTM312 Intermediate Macroeconomics (Undergraduate)</li>
-          <li>Fall 2023 - BTM701 Advanced Econometrics (Graduate)</li>
-          <li>Spring 2023 - BTM408 Economics of Technology and Innovation (Undergraduate)</li>
-          <li>Fall 2022 - MSB200 Introduction to Business Management (Undergraduate)</li>
-          <li>Fall 2021 - MSB408 Economics of Technology (Undergraduate)</li>
-          <li>Spring 2021 - ECN312 Intermediate Macroeconomics (Graduate)</li>
+
+          <li>
+            Spring 2025 - BTM408 Economics of Technology and Innovation
+            (Undergraduate)
+          </li>
+
+          <li>
+            Fall 2024 - BTM701 Advanced Econometrics
+            (Graduate)
+          </li>
+
+          <li>
+            Spring 2024 - BTM312 Intermediate Macroeconomics
+            (Undergraduate)
+          </li>
+
+          <li>
+            Fall 2023 - BTM701 Advanced Econometrics
+            (Graduate)
+          </li>
+
+          <li>
+            Spring 2023 - BTM408 Economics of Technology and Innovation
+            (Undergraduate)
+          </li>
+
+          <li>
+            Fall 2022 - MSB200 Introduction to Business Management
+            (Undergraduate)
+          </li>
+
+          <li>
+            Fall 2021 - MSB408 Economics of Technology
+            (Undergraduate)
+          </li>
+
+          <li>
+            Spring 2021 - ECN312 Intermediate Macroeconomics
+            (Graduate)
+          </li>
+
         </ul>
+
       </li>
 
-      <li style="margin-top:6px;"><span class="teach-role">@KAIST, Tutor</span>
+
+      <li style="margin-top:6px;">
+
+        <span class="teach-role">
+          @KAIST, Tutor
+        </span>
+
         <ul class="teach-list">
-          <li>Spring 2021 - MSB215 Microeconomics (Undergraduate)</li>
+
+          <li>
+            Spring 2021 - MSB215 Microeconomics
+            (Undergraduate)
+          </li>
+
         </ul>
+
       </li>
 
-      <li style="margin-top:6px;"><span class="teach-role">@Bath, England, Teaching Assistant</span>
+
+      <li style="margin-top:6px;">
+
+        <span class="teach-role">
+          @Bath, England, Teaching Assistant
+        </span>
+
         <ul class="teach-list">
-          <li>Spring 2017 - ES10004 Economic Data Analysis (Undergraduate)</li>
-          <li>Fall 2016 - ES10091 Introduction to Probability and Statistics (Undergraduate)</li>
+
+          <li>
+            Spring 2017 - ES10004 Economic Data Analysis
+            (Undergraduate)
+          </li>
+
+          <li>
+            Fall 2016 - ES10091 Introduction to Probability and Statistics
+            (Undergraduate)
+          </li>
+
         </ul>
+
       </li>
+
     </ul>
+
 
     <!-- Education -->
     <h2>Education</h2>
+
     <ul style="margin-bottom: 0;">
+
       <li style="margin-bottom: 4px;">
-        Ph.D. in Business and Technology Management, KAIST, Mar 2021–Present
+
+        Ph.D. in Business and Technology Management,
+        KAIST, Mar 2021–Present
+
         <ul>
-          <li style="margin-bottom: 0;">Dissertation: Social and Policy Implications of AI</li>
-          <li style="margin-bottom: 0;">Supervisor: <a href="https://jiheekim.net/" target="_blank">Prof. Jihee Kim</a></li>
-          <li style="margin-bottom: 0;">Research Group: <a href="https://econai.kaist.ac.kr/index.html" target="_blank">Economic Progress and AI Research Group (Econ-AI)</a></li>
+
+          <li style="margin-bottom: 0;">
+            Dissertation: Social and Policy Implications of AI
+          </li>
+
+          <li style="margin-bottom: 0;">
+            Supervisor:
+            <a href="https://jiheekim.net/"
+               target="_blank">
+              Prof. Jihee Kim
+            </a>
+          </li>
+
+          <li style="margin-bottom: 0;">
+            Research Group:
+            <a href="https://econai.kaist.ac.kr/index.html"
+               target="_blank">
+              Economic Progress and AI Research Group (Econ-AI)
+            </a>
+          </li>
+
         </ul>
+
       </li>
-      <li style="margin-bottom: 4px;">MSc in Economics and Finance, Durham University, 2013</li>
-      <li style="margin-bottom: 4px;">B.A. in Economics (Minor in Mathematics), The University of Texas at Austin, 2009</li>
+
+
+      <li style="margin-bottom: 4px;">
+        MSc in Economics and Finance,
+        Durham University, 2013
+      </li>
+
+
+      <li style="margin-bottom: 4px;">
+        B.A. in Economics (Minor in Mathematics),
+        The University of Texas at Austin, 2009
+      </li>
+
     </ul>
+
 
     <!-- Photo -->
     <div style="margin-top: 40px; text-align: center;">
-      <img src="with_chad_jones_jihee_kim.jpg"
-           alt="With Prof. Chad Jones and Prof. Jihee Kim"
-           style="max-width: 100%; width: 480px; border-radius: 6px; border: 1px solid var(--border);" />
-      <p style="font-size: 0.85rem; color: var(--muted); margin-top: 8px;">
+
+      <img
+        src="with_chad_jones_jihee_kim.jpg"
+        alt="With Prof. Chad Jones and Prof. Jihee Kim"
+        style="
+          max-width: 100%;
+          width: 480px;
+          border-radius: 6px;
+          border: 1px solid var(--border);
+        "
+      />
+
+      <p style="
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-top: 8px;
+      ">
         Me (left), Prof. Chad Jones (center), Prof. Jihee Kim (right)<br />
-        @ the 2026 Korean Economic Review (KER) International Conference, Jeju, June 2026.<br />
-        Two scholars I deeply admire: my advisor, Prof. Jihee Kim, and her Ph.D. advisor, Prof. Jones
+
+        @ the 2026 Korean Economic Review (KER) International Conference,
+        Jeju, June 2026.<br />
+
+        Two scholars I deeply admire: my advisor, Prof. Jihee Kim,
+        and her Ph.D. advisor, Prof. Jones
         &mdash; who kindly called me his &ldquo; grandkid.&rdquo;
-        
       </p>
+
     </div>
-    
+
   </main>
+
 </div>
 
+
 <footer>
-  &copy; 2025 Hyoshin Kim &middot; KAIST &middot; Last updated: July 2026
+  &copy; 2025 Hyoshin Kim &middot; KAIST &middot;
+  Last updated: July 2026
 </footer>
+
 
 </body>
 </html>
