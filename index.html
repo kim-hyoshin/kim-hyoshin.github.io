@@ -690,6 +690,16 @@
         padding: 22px 0 0;
       }
     }
+    /* Circular profile photo */
+.profile-photo {
+  display: block;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 22px;
+}
   </style>
 </head>
 
@@ -728,6 +738,13 @@
 
     <!-- Left sidebar -->
     <aside class="rail">
+      <img
+    class="profile-photo"
+    src="hyoshin.jpg"
+    alt="Hyoshin Kim"
+    width="140"
+    height="140"
+  >
       <h1 class="name">Hyoshin Kim</h1>
 
       <div class="affil">
