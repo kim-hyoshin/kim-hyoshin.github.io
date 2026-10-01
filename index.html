@@ -1,45 +1,1256 @@
-<!-- Publications -->
-<section class="section" id="publications">
-  <h2 class="section-title">Publications</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hyoshin Kim</title>
+  <meta name="description" content="Personal homepage of Hyoshin Kim, Ph.D. Candidate at KAIST." />
 
-  <article class="paper">
-    <h3 class="paper-title">
-      <a href="https://doi.org/10.1038/s44458-026-00054-6"
-         target="_blank"
-         rel="noopener noreferrer">
-        Minimally supervised learning on sub-meter satellite imagery reveals
-        slum expansion during the COVID-19 pandemic
-      </a>
-    </h3>
+  <!-- Fonts used by the reference design -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
 
-    <p class="authors">
-      with Jeasurk Yang, Sungwon Park, Sumin Lee, Jungwon Kim,
-      Jihee Kim, and Meeyoung Cha
-    </p>
+  <!-- Calendly -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
-    <p class="publication-meta">
-      <em>Communications Sustainability</em> 1, Article 52, 2026.
-    </p>
-  </article>
+  <style>
+    :root {
+      --paper: #F4F4F4;
+      --card: #FDFDFD;
+      --ink: #151515;
+      --muted: #5E5E5E;
+      --faint: #9B9B9B;
+      --rule: #DFDFDF;
 
-  <article class="paper">
-    <h3 class="paper-title">
-      <a href="https://doi.org/10.1145/3748699.3749786"
-         target="_blank"
-         rel="noopener noreferrer">
-        Tracking Economic Disparities in North Korea:
-        Satellite Imagery Analysis Using AI with Policy Insights
-      </a>
-    </h3>
+      --navy: #1A1A1A;
+      --navy-mid: #333333;
+      --navy-soft: #6E6E6E;
+      --navy-bg: #E9E9E9;
+      --gold: #555555;
+      --gold-bg: #ECECEC;
+      --link-rule: rgba(0, 0, 0, .28);
 
-    <p class="authors">
-      with Sumin Lee, Donghyun Ahn, Donggyu Lee, Jungwon Kim,
-      Hyeok Yun, Chaemin Jang, WoonChul Jung, Dongman Lee,
-      Meeyoung Cha, and Jihee Kim
-    </p>
+      --serif: "Source Serif 4", Georgia, serif;
+      --sans: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+      --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
 
-    <p class="publication-meta">
-      <em>ACM GoodIT '25</em>, pp. 155–163, 2025.
-    </p>
-  </article>
-</section>
+      color-scheme: light;
+    }
+
+    :root[data-theme="dark"] {
+      --paper: #141414;
+      --card: #1C1C1C;
+      --ink: #EAEAEA;
+      --muted: #ACACAC;
+      --faint: #767676;
+      --rule: #2E2E2E;
+      --navy: #F0F0F0;
+      --navy-mid: #C9C9C9;
+      --navy-soft: #909090;
+      --navy-bg: #272727;
+      --gold: #BDBDBD;
+      --gold-bg: #2B2B2B;
+      --link-rule: rgba(201, 201, 201, .35);
+
+      color-scheme: dark;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body, h1, h2, h3, p, ul, ol, li, figure {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul, ol {
+      list-style: none;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 16.5px;
+      line-height: 1.55;
+      font-optical-sizing: auto;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: var(--navy-mid);
+      text-decoration: none;
+      border-bottom: 1px solid var(--link-rule);
+    }
+
+    a:hover {
+      background: var(--navy-bg);
+      border-bottom-color: var(--navy-mid);
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--navy-mid);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    .page {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 52px 32px 56px;
+      display: grid;
+      grid-template-columns: 236px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* ─────────────────────
+       Left rail
+       ───────────────────── */
+
+    .rail {
+      border-right: 1px solid var(--rule);
+      padding-right: 44px;
+      min-height: 268px;
+    }
+
+    .name {
+      font-family: var(--serif);
+      font-size: 31px;
+      font-weight: 600;
+      letter-spacing: -.014em;
+      line-height: 1.1;
+      color: var(--navy);
+    }
+
+    .name::after {
+      content: "";
+      display: block;
+      width: 34px;
+      height: 2px;
+      background: var(--gold);
+      margin-top: 14px;
+    }
+
+    .affil {
+      font-family: var(--sans);
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: var(--muted);
+      margin-top: 14px;
+    }
+
+    .affil a {
+      color: var(--muted);
+      border-bottom-color: var(--rule);
+    }
+
+    .affil a:hover {
+      color: var(--navy);
+      background: none;
+      border-bottom-color: var(--navy-soft);
+    }
+
+    .contact {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid var(--rule);
+      font-family: var(--mono);
+      font-size: 12.5px;
+      line-height: 1.95;
+      color: var(--muted);
+    }
+
+    .contact a {
+      color: var(--navy-mid);
+      border-bottom-color: var(--link-rule);
+    }
+
+    /* ─────────────────────
+       Main content
+       ───────────────────── */
+
+    .main {
+      min-width: 0;
+    }
+
+    .intro {
+      font-size: 17.5px;
+      line-height: 1.6;
+      text-wrap: pretty;
+    }
+
+    .intro + .intro {
+      margin-top: 10px;
+    }
+
+    .section {
+      margin-top: 34px;
+    }
+
+    .section-title {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--navy);
+      padding-bottom: 7px;
+      border-bottom: 1px solid var(--navy);
+      margin-bottom: 18px;
+    }
+
+    /* ─────────────────────
+       Papers
+       ───────────────────── */
+
+    .paper + .paper {
+      margin-top: 20px;
+    }
+
+    .paper-title {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.38;
+      letter-spacing: -.006em;
+      text-wrap: pretty;
+    }
+
+    .paper-title a {
+      color: var(--ink);
+      border-bottom-color: var(--link-rule);
+    }
+
+    .paper-title a:hover {
+      color: var(--navy);
+      background: var(--navy-bg);
+    }
+
+    .authors {
+      font-family: var(--serif);
+      font-size: 15.5px;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    .publication-meta {
+      font-size: 15px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .meta {
+      margin-top: 6px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 8px 12px;
+    }
+
+    .status {
+      font-family: var(--mono);
+      font-size: 11px;
+      line-height: 1.45;
+      letter-spacing: .02em;
+      color: var(--navy-mid);
+      background: var(--navy-bg);
+      padding: 3px 8px;
+      border-radius: 2px;
+    }
+
+    /* ─────────────────────
+       Presentations
+       ───────────────────── */
+
+    .talks summary {
+      font-family: var(--sans);
+      font-size: 12.5px;
+      color: var(--faint);
+      cursor: pointer;
+      list-style: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      user-select: none;
+    }
+
+    .talks summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .talks summary::before {
+      content: "+";
+      font-family: var(--mono);
+      font-size: 12px;
+    }
+
+    .talks[open] summary::before {
+      content: "\2013";
+    }
+
+    .talks summary:hover {
+      color: var(--navy);
+    }
+
+    .talks-body {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.55;
+      margin-top: 7px;
+      padding-left: 14px;
+      border-left: 2px solid var(--navy-bg);
+    }
+
+    .talks-body li + li {
+      margin-top: 5px;
+    }
+
+    .upcoming {
+      font-family: var(--sans);
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--navy-mid);
+      background: var(--navy-bg);
+      padding: 1px 5px;
+      border-radius: 2px;
+      margin-right: 4px;
+      white-space: nowrap;
+    }
+
+    .award {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    /* ─────────────────────
+       Teaching
+       ───────────────────── */
+
+    .course {
+      font-family: var(--serif);
+      font-size: 16.5px;
+      line-height: 1.38;
+    }
+
+    .course + .course {
+      margin-top: 13px;
+    }
+
+    .course-name {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .course-meta {
+      font-size: 15px;
+      color: var(--muted);
+      margin-top: 1px;
+    }
+
+    /* ─────────────────────
+       Education
+       ───────────────────── */
+
+    .education {
+      font-family: var(--serif);
+      font-size: 16.5px;
+      line-height: 1.42;
+    }
+
+    .education + .education {
+      margin-top: 14px;
+    }
+
+    .degree {
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .education-meta,
+    .education-detail {
+      font-size: 15px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* ─────────────────────
+       Theme toggle
+       ───────────────────── */
+
+    .theme-toggle {
+      position: fixed;
+      top: 18px;
+      right: 18px;
+      width: 36px;
+      height: 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--rule);
+      border-radius: 50%;
+      background: var(--card);
+      color: var(--muted);
+      cursor: pointer;
+      padding: 0;
+      transition:
+        color .15s,
+        border-color .15s,
+        background .15s;
+    }
+
+    .theme-toggle:hover {
+      color: var(--navy);
+      border-color: var(--navy-soft);
+    }
+
+    .theme-toggle svg {
+      width: 17px;
+      height: 17px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .theme-toggle .icon-sun {
+      display: none;
+    }
+
+    :root[data-theme="dark"] .theme-toggle .icon-sun {
+      display: block;
+    }
+
+    :root[data-theme="dark"] .theme-toggle .icon-moon {
+      display: none;
+    }
+
+    footer {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 32px 34px;
+      font-family: var(--sans);
+      font-size: 11.5px;
+      color: var(--faint);
+    }
+
+    /* ─────────────────────
+       Mobile
+       ───────────────────── */
+
+    @media (max-width: 820px) {
+      .page {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 36px 20px 56px;
+      }
+
+      .rail {
+        border-right: none;
+        border-bottom: 1px solid var(--rule);
+        padding-right: 0;
+        padding-bottom: 24px;
+        min-height: 0;
+      }
+
+      .name {
+        font-size: 33px;
+      }
+
+      .main {
+        width: 100%;
+      }
+
+      .paper-title,
+      .authors,
+      .publication-meta,
+      .course,
+      .course-meta,
+      .education,
+      .education-meta,
+      .education-detail,
+      .intro,
+      a {
+        overflow-wrap: anywhere;
+      }
+
+      .theme-toggle {
+        top: 12px;
+        right: 12px;
+      }
+
+      footer {
+        padding: 0 20px 28px;
+      }
+    }
+
+    /* ─────────────────────
+       Print
+       ───────────────────── */
+
+    @media print {
+      :root,
+      :root[data-theme="dark"] {
+        --paper: #ffffff;
+        --card: #ffffff;
+        --ink: #000000;
+        --muted: #444444;
+        --faint: #666666;
+        --rule: #cccccc;
+        --navy: #000000;
+        --navy-mid: #222222;
+        --navy-soft: #555555;
+        --navy-bg: #eeeeee;
+        --gold: #444444;
+        --gold-bg: #eeeeee;
+        --link-rule: rgba(0, 0, 0, .25);
+
+        color-scheme: light;
+      }
+
+      body {
+        background: #ffffff;
+      }
+
+      .page {
+        max-width: none;
+        padding: 0;
+      }
+
+      .theme-toggle {
+        display: none;
+      }
+
+      .talks:not([open]) .talks-body {
+        display: block;
+      }
+
+      a {
+        color: #000000;
+      }
+
+      footer {
+        max-width: none;
+        padding: 22px 0 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Theme toggle -->
+  <button
+    class="theme-toggle"
+    type="button"
+    aria-label="Toggle dark mode"
+    title="Toggle theme"
+  >
+    <svg
+      class="icon-moon"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path
+        d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.7 6.7 0 0 0 21 12.8Z">
+      </path>
+    </svg>
+
+    <svg
+      class="icon-sun"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <circle
+        cx="12"
+        cy="12"
+        r="4">
+      </circle>
+
+      <path
+        d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41">
+      </path>
+    </svg>
+  </button>
+
+
+  <div class="page">
+
+    <!-- ─────────────────────
+         Left rail
+         ───────────────────── -->
+
+    <aside class="rail">
+
+      <h1 class="name">
+        Hyoshin Kim
+      </h1>
+
+      <div class="affil">
+        Ph.D. Candidate in Business and Technology Management<br />
+        KAIST
+      </div>
+
+      <div class="contact">
+
+        <div>
+          hyoshin.kim (at) kaist.ac.kr
+        </div>
+
+        <div>
+          <a
+            href="#"
+            onclick="Calendly.initPopupWidget({url:'https://calendly.com/kimhyoshin/30min'});return false;"
+          >
+            Schedule a meeting
+          </a>
+        </div>
+
+      </div>
+
+    </aside>
+
+
+    <!-- ─────────────────────
+         Main content
+         ───────────────────── -->
+
+    <main class="main">
+
+      <p class="intro">
+        I am a Ph.D. candidate in Business and Technology Management at KAIST.
+        My research focuses on economics of ideas, science and innovation,
+        and artificial intelligence (AI), with special interest in the
+        social and policy implications of AI.
+      </p>
+
+
+      <!-- ─────────────────────
+           Publications
+           ───────────────────── -->
+
+      <section
+        class="section"
+        id="publications"
+      >
+
+        <h2 class="section-title">
+          Publications
+        </h2>
+
+
+        <!-- Publication 1 -->
+        <article class="paper">
+
+          <h3 class="paper-title">
+
+            <a
+              href="https://doi.org/10.1038/s44458-026-00054-6"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Minimally supervised learning on sub-meter satellite imagery
+              reveals slum expansion during the COVID-19 pandemic
+            </a>
+
+          </h3>
+
+          <p class="authors">
+            with Jeasurk Yang, Sungwon Park, Sumin Lee,
+            Jungwon Kim, Jihee Kim, and Meeyoung Cha
+          </p>
+
+          <p class="publication-meta">
+            <em>Communications Sustainability</em>
+            1, Article 52, 2026.
+          </p>
+
+        </article>
+
+
+        <!-- Publication 2 -->
+        <article class="paper">
+
+          <h3 class="paper-title">
+
+            <a
+              href="https://doi.org/10.1145/3748699.3749786"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Tracking Economic Disparities in North Korea:
+              Satellite Imagery Analysis Using AI with Policy Insights
+            </a>
+
+          </h3>
+
+          <p class="authors">
+            with Sumin Lee, Donghyun Ahn, Donggyu Lee,
+            Jungwon Kim, Hyeok Yun, Chaemin Jang,
+            WoonChul Jung, Dongman Lee, Meeyoung Cha,
+            and Jihee Kim
+          </p>
+
+          <p class="publication-meta">
+            <em>ACM GoodIT '25</em>,
+            pp. 155–163, 2025.
+          </p>
+
+        </article>
+
+      </section>
+
+
+      <!-- ─────────────────────
+           Working Papers
+           ───────────────────── -->
+
+      <section
+        class="section"
+        id="working-papers"
+      >
+
+        <h2 class="section-title">
+          Working Papers
+        </h2>
+
+
+        <!-- Working Paper 1 -->
+        <article class="paper">
+
+          <h3 class="paper-title">
+            How Information about Generative AI Shapes Workers'
+            Expectations: Evidence from a Survey Experiment
+          </h3>
+
+          <p class="authors">
+            with Jihee Kim
+          </p>
+
+          <div class="meta">
+
+            <details class="talks">
+
+              <summary>
+                Presentations
+              </summary>
+
+              <ul class="talks-body">
+
+                <li>
+
+                  <span class="upcoming">
+                    Upcoming
+                  </span>
+
+                  <a
+                    href="https://www.aeaweb.org/conference/2027/preliminary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    American Economic Association (AEA) Poster Session,
+                    2027 Allied Social Science Associations (ASSA)
+                    Annual Meeting
+                  </a>,
+                  Washington, DC, January 2027
+
+                </li>
+
+
+                <li>
+                  2026 Korean Economic Review (KER)
+                  International Conference,
+                  Jeju, South Korea, June 2026
+                </li>
+
+
+                <li>
+                  2026 Spring BTM Workshop,
+                  KAIST, February 2026
+
+                  <span class="award">
+                    — Outstanding Presentation Award
+                  </span>
+                </li>
+
+
+                <li>
+                  2025 BTM &amp; ITM &amp; GDI BK Research Workshop,
+                  KAIST, February 2025
+                </li>
+
+              </ul>
+
+            </details>
+
+          </div>
+
+        </article>
+
+
+        <!-- Working Paper 2 -->
+        <article class="paper">
+
+          <h3 class="paper-title">
+
+            <a
+              href="https://arxiv.org/abs/2507.13323"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GeoReg: Weight-Constrained Few-Shot Regression
+              for Socio-Economic Estimation using LLM
+            </a>
+
+          </h3>
+
+          <p class="authors">
+            with Kyeongjin Ahn, Sungwon Han, Seungeon Lee,
+            Donghyun Ahn, Jungwon Kim, Jihee Kim,
+            Sangyoon Park, and Meeyoung Cha
+          </p>
+
+          <div class="meta">
+
+            <span class="status">
+              Under Review, International Journal of Applied Earth
+              Observation and Geoinformation
+            </span>
+
+          </div>
+
+        </article>
+
+
+        <!-- Working Paper 3 -->
+        <article class="paper">
+
+          <h3 class="paper-title">
+            Monitoring Urban Slums from the Sky:
+            How Redevelopment Projects Shape the Spatial Pattern
+            of Slum Settlements over Time
+          </h3>
+
+          <p class="authors">
+            with Meeyoung Cha, Jihee Kim, and Jeasurk Yang
+          </p>
+
+          <div class="meta">
+
+            <details class="talks">
+
+              <summary>
+                Presentations
+              </summary>
+
+              <ul class="talks-body">
+
+                <li>
+                  The 19th North American Meeting of the
+                  Urban Economics Association (UEA),
+                  Montreal, Canada, October 2025
+                </li>
+
+
+                <li>
+                  2025 Summer School in Urban Economics,
+                  Urban Economics Association (UEA),
+                  Boston, MA, July 2025
+                </li>
+
+
+                <li>
+                  BTM Brown Bag Seminar,
+                  KAIST, November 2024
+                </li>
+
+              </ul>
+
+            </details>
+
+          </div>
+
+        </article>
+
+      </section>
+
+
+      <!-- ─────────────────────
+           Teaching
+           ───────────────────── -->
+
+      <section
+        class="section"
+        id="teaching"
+      >
+
+        <h2 class="section-title">
+          Teaching
+        </h2>
+
+
+        <div class="course">
+
+          <div class="course-name">
+            Financial Markets and Institutions
+          </div>
+
+          <div class="course-meta">
+            Kookmin University, Undergraduate,
+            Lecturer, Fall 2026, taught in English
+          </div>
+
+        </div>
+
+
+        <div class="course">
+
+          <div class="course-name">
+            Business Mathematics
+          </div>
+
+          <div class="course-meta">
+            Kookmin University, Undergraduate,
+            Lecturer, Spring 2026, taught in English
+          </div>
+
+        </div>
+
+
+        <div class="course">
+
+          <div class="course-name">
+            BTM408 Economics of Technology and Innovation
+          </div>
+
+          <div class="course-meta">
+            KAIST, Undergraduate,
+            Teaching Assistant, Spring 2025
+          </div>
+
+        </div>
+
+
+        <div class="course">
+
+          <div class="course-name">
+            BTM701 Advanced Econometrics
+          </div>
+
+          <div class="course-meta">
+            KAIST, Graduate,
+            Teaching Assistant, Fall 2024
+          </div>
+
+        </div>
+
+
+        <div class="course">
+
+          <div class="course-name">
+            BTM312 Intermediate Macroeconomics
+          </div>
+
+          <div class="course-meta">
+            KAIST, Undergraduate,
+            Teaching Assistant, Spring 2024
+          </div>
+
+        </div>
+
+
+        <div class="course">
+
+          <div class="course-name">
+            BTM701 Advanced Econometrics
+          </div>
+
+          <div class="course-meta">
+            KAIST, Graduate,
+            Teaching Assistant, Fall 2023
+          </div>
+
+        </div>
+
+
+        <div class="course">
+
+          <div class="course-name">
+            BTM408 Economics of Technology and Innovation
+          </div>
+
+          <div class="course-meta">
+            KAIST, Undergraduate,
+            Teaching Assistant, Spring 2023
+          </div>
+
+        </div>
+
+
+        <div class="course">
+
+          <div class="course-name">
+            MSB200 Introduction to Business Management
+          </div>
+
+          <div class="course-meta">
+            KAIST, Undergraduate,
+            Teaching Assistant, Fall 2022
+          </div>
+
+        </div>
+
+
+        <div class="course">
+
+          <div class="course-name">
+            MSB408 Economics of Technology
+          </div>
+
+          <div class="course-meta">
+            KAIST, Undergraduate,
+            Teaching Assistant, Fall 2021
+          </div>
+
+        </div>
+
+
+        <div class="course">
+
+          <div class="course-name">
+            ECN312 Intermediate Macroeconomics
+          </div>
+
+          <div class="course-meta">
+            KAIST, Graduate,
+            Teaching Assistant, Spring 2021
+          </div>
+
+        </div>
+
+
+        <div class="course">
+
+          <div class="course-name">
+            MSB215 Microeconomics
+          </div>
+
+          <div class="course-meta">
+            KAIST, Undergraduate,
+            Tutor, Spring 2021
+          </div>
+
+        </div>
+
+
+        <div class="course">
+
+          <div class="course-name">
+            ES10004 Economic Data Analysis
+          </div>
+
+          <div class="course-meta">
+            Bath, England, Undergraduate,
+            Teaching Assistant, Spring 2017
+          </div>
+
+        </div>
+
+
+        <div class="course">
+
+          <div class="course-name">
+            ES10091 Introduction to Probability and Statistics
+          </div>
+
+          <div class="course-meta">
+            Bath, England, Undergraduate,
+            Teaching Assistant, Fall 2016
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ─────────────────────
+           Education
+           ───────────────────── -->
+
+      <section
+        class="section"
+        id="education"
+      >
+
+        <h2 class="section-title">
+          Education
+        </h2>
+
+
+        <div class="education">
+
+          <div class="degree">
+            Ph.D. in Business and Technology Management, KAIST
+          </div>
+
+          <div class="education-meta">
+            Mar 2021–Present
+          </div>
+
+          <div class="education-detail">
+
+            Dissertation:
+            <em>Social and Policy Implications of AI</em>
+
+            <br />
+
+            Supervisor:
+
+            <a
+              href="https://jiheekim.net/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Prof. Jihee Kim
+            </a>
+
+            <br />
+
+            Research Group:
+
+            <a
+              href="https://econai.kaist.ac.kr/index.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Economic Progress and AI Research Group (Econ-AI)
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="education">
+
+          <div class="degree">
+            MSc in Economics and Finance,
+            Durham University
+          </div>
+
+          <div class="education-meta">
+            2013
+          </div>
+
+        </div>
+
+
+        <div class="education">
+
+          <div class="degree">
+            B.A. in Economics (Minor in Mathematics),
+            The University of Texas at Austin
+          </div>
+
+          <div class="education-meta">
+            2009
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <footer>
+    &copy; 2026 Hyoshin Kim
+    &middot;
+    KAIST
+    &middot;
+    Last updated: October 2026
+  </footer>
+
+
+  <script>
+    (function () {
+
+      const root = document.documentElement;
+
+      const button =
+        document.querySelector(".theme-toggle");
+
+      const savedTheme =
+        localStorage.getItem("theme");
+
+
+      if (
+        savedTheme === "dark" ||
+        savedTheme === "light"
+      ) {
+
+        root.setAttribute(
+          "data-theme",
+          savedTheme
+        );
+
+      } else if (
+        window.matchMedia &&
+        window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches
+      ) {
+
+        root.setAttribute(
+          "data-theme",
+          "dark"
+        );
+
+      }
+
+
+      button.addEventListener(
+        "click",
+        function () {
+
+          const current =
+            root.getAttribute("data-theme") === "dark"
+              ? "dark"
+              : "light";
+
+          const next =
+            current === "dark"
+              ? "light"
+              : "dark";
+
+          root.setAttribute(
+            "data-theme",
+            next
+          );
+
+          localStorage.setItem(
+            "theme",
+            next
+          );
+
+        }
+      );
+
+    })();
+  </script>
+
+</body>
+</html>
